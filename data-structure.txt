@@ -2,7 +2,7 @@
 
     title Data Structure
     
-    class Workout <<(W,olive)>> {
+    class Workout <<(W,brown)>> {
         #id
         +name : varchar(255)
     }
@@ -17,7 +17,7 @@
 
     Workouts "1..*" -- "1..*" Exercise
     
-    class Exercise <<(F,brown)>> {
+    class Exercise <<(E,brown)>> {
         #id : int(10)
         +name : varchar(255)
     }
