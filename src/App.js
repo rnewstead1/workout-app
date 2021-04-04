@@ -4,20 +4,17 @@ import Workout from './components/Workout';
 import './App.css';
 
 function App() {
-  const [currentTime, setCurrentTime] = useState(0);
+  const [exercises, setExercises] = useState([]);
 
   useEffect(() => {
-    fetch('/api/time').then(res => res.json()).then(data => {
-      setCurrentTime(data.time);
+    fetch('/api/exercises').then(res => res.json()).then(data => {
+      setExercises(data.exercises);
     });
   }, []);
 
   return (
     <div className="App" data-testid="app">
-      <header className="App-header">
-        <p>The current time is {currentTime}.</p>
-      </header>
-      <Workout />
+      <Workout exercises={exercises}/>
     </div>
   );
 }
