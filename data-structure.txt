@@ -1,0 +1,16 @@
+@startuml
+    title Data Structure
+    class Workout <<(W,olive)>> {
+        #id
+        +workout_id : int(10)
+        +exercise_id : int(10)
+    }
+
+    Workout "1..*" -- "1..*" Exercise
+
+    class Exercise <<(F,brown)>> {
+        #id : int(10)
+        +exercise_id : int(10)
+        +name : varchar(255)
+    }
+@enduml
