@@ -19,3 +19,5 @@ npm start
 ```
 
 The app will be running in development mode on [http://localhost:3000](http://localhost:3000).
+
+![Data Structure](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rnewstead1/workout-app/main/data-structure.txt)
