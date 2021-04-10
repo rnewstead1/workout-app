@@ -7,15 +7,16 @@
         +name : varchar(255)
     }
     
-    Workout "1..*" -- "1..*" Workouts
+    Workout "1..*" -- "1..*" WorkoutExercise
     
-    class Workouts <<(W,olive)>> {
+    class WorkoutExercise <<(WE,olive)>> {
         #id
         +workout_id : int(10)
         +exercise_id : int(10)
+        +position: int(10)
     }
 
-    Workouts "1..*" -- "1..*" Exercise
+    WorkoutExercise "1..*" -- "1..*" Exercise
     
     class Exercise <<(E,brown)>> {
         #id : int(10)

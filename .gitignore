@@ -28,3 +28,4 @@ yarn-error.log*
 venv
 __pycache__
 *.flaskenv
+/api/workout_app.db

@@ -16,6 +16,7 @@
     "start": "react-scripts start",
     "start-api": "cd api && venv/bin/flask run --no-debugger",
     "build": "react-scripts build",
+    "build-api": "cd api && python3 -m venv venv && venv/bin/pip install -r requirements.txt",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint  --ext .jsx --ext .js src/",
