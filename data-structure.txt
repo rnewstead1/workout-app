@@ -9,7 +9,7 @@
     
     Workout "1..*" -- "1..*" WorkoutExercise
     
-    class WorkoutExercise <<(WE,olive)>> {
+    class WorkoutExercise <<(w,olive)>> {
         #id
         +workout_id : int(10)
         +exercise_id : int(10)
