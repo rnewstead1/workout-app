@@ -1,15 +1,21 @@
-body {
-  background-color: #282c34;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app-header {
+  text-align: center;
+  border-bottom: 1px solid #7eb09b;
+  h1 {
+    color: #476a6f
+  }
+  ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    color: #519e8a;
+    a {
+      color: #519e8a;
+    }
+  }
 }
 
-.app {
-  ul {
-    list-style: none;
-  }
-  a {
-    text-decoration: none;
-    color: white;
-  }
+.app-home {
+  padding: 20px;
+  color: #c5c9a4;
 }

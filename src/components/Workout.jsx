@@ -15,14 +15,16 @@ export default function Workout() {
   return (
     <div className="workout">
       <h1>{workoutName}</h1>
-      {sets.map((set, i) => (
-        <div key={`${workoutName}-${i + 1}`}>
-          <h2>Set {i + 1}</h2>
-          {set.map(({ exercise }) => (
-            <div key={exercise}>{exercise}</div>
-          ))}
-        </div>
-      ))}
+      <div className="workout-sets">
+        {sets.map((set, i) => (
+          <div className="workout-set" key={`${workoutName}-${i + 1}`}>
+            <h2>Set {i + 1}</h2>
+            {set.map(({ exercise }) => (
+              <div className="workout-exercise" key={exercise}>{exercise}</div>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -23,23 +23,42 @@ export default function App() {
     <Router>
       <div className="app" data-testid="app">
         <div className="app-header">
-          <h1>Workouts</h1>
           <ul>
             <li>
-              <Link to="/workouts">View all</Link>
+              <Link to="/">Workouts</Link>
+            </li>
+            <li>
+              <Link to="/workouts">See all</Link>
             </li>
           </ul>
+          <div>
+          </div>
         </div>
-
         <Switch>
+          <Route exact path="/">
+            <Home/>
+          </Route>
           <Route path="/workouts">
-            <WorkoutsList workouts={workouts} />
+            <WorkoutsList workouts={workouts}/>
           </Route>
           <Route path="/workout/:workoutId">
-            <Workout />
+            <Workout/>
           </Route>
         </Switch>
       </div>
     </Router>
+  );
+}
+
+function Home() {
+  return (
+    <div className="app-home">
+      <p>A selection of workouts.</p>
+      <p>Each will have 12 exercises.</p>
+      <p>Install an <a href="https://play.google.com/store/apps/details?id=cc.dreamspark.intervaltimer&hl=en_GB&gl=US">interval timer app</a>.</p>
+      <p>Set the time for 6 rounds of 50 seconds work, 10 seconds rest.</p>
+      <p>Repeat each set 3 times.</p>
+      <p>Take 2 minutes rest between each set.</p>
+    </div>
   );
 }

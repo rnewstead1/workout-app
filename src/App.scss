@@ -1,2 +1,18 @@
-@import 'styles/_main.scss';
-@import 'styles/_workout.scss';
+body {
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.app {
+  @import 'styles/_main.scss';
+  @import 'styles/_workout.scss';
+  @import 'styles/_workoutsList.scss';
+}

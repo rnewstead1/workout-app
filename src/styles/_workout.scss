@@ -3,7 +3,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  h1 {
+    color: #ecbeb4;
+  }
+  h2 {
+    color: #7eb09b;
+  }
+  .workout-sets {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    .workout-set {
+      padding-left: 10px;
+      .workout-exercise {
+        padding-bottom: 10px;
+      }
+    }
+  }
 }

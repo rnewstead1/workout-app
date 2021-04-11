@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export default function WorkoutsList({ workouts }) {
   return (
-    <div>
+    <div className="workouts-list">
       <ul>
         {workouts.map(({ name, id }) => (
           <li key={name}>
