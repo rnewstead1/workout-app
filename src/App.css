@@ -1,9 +1,19 @@
-.App {
-  text-align: center;
+body {
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.app ul {
+  list-style: none;
+}
+
+.app a {
+  text-decoration: none;
+  color: white;
 }
 
 .workout {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

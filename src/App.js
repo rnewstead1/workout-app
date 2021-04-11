@@ -1,22 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import Workout from './components/Workout';
+import React, { useEffect, useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 
+import Workout from './components/Workout';
+import WorkoutsList from './components/WorkoutsList';
 import './App.css';
 
-function App() {
-  const [exercises, setExercises] = useState([]);
+export default function App() {
+  const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch('/api/exercises').then(res => res.json()).then(data => {
-      setExercises(data.exercises);
+    fetch('/api/workouts').then(res => res.json()).then(data => {
+      setWorkouts(data.workouts);
     });
   }, []);
 
   return (
-    <div className="App" data-testid="app">
-      <Workout exercises={exercises}/>
-    </div>
+    <Router>
+      <div className="app" data-testid="app">
+        <div className="app-header">
+          <h1>Workouts</h1>
+          <ul>
+            <li>
+              <Link to="/workouts">View all</Link>
+            </li>
+          </ul>
+        </div>
+
+        <Switch>
+          <Route path="/workouts">
+            <WorkoutsList workouts={workouts} />
+          </Route>
+          <Route path="/workout/:workoutId">
+            <Workout />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-export default App;
