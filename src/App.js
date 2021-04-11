@@ -8,7 +8,7 @@ import {
 
 import Workout from './components/Workout';
 import WorkoutsList from './components/WorkoutsList';
-import './App.css';
+import './App.scss';
 
 export default function App() {
   const [workouts, setWorkouts] = useState([]);
