@@ -1,4 +1,4 @@
--- Add basic workout
+-- Rollback basic workout
 -- depends: 20210410_01_eO7I9-add-tables
 
 DELETE FROM workout_exercise WHERE workout_id = (SELECT id FROM workout WHERE name = 'Basic');

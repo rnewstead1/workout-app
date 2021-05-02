@@ -21,3 +21,26 @@ npm start
 The app will be running in development mode on [http://localhost:3000](http://localhost:3000).
 
 ![Data Structure](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rnewstead1/workout-app/main/data-structure.txt)
+
+## Adding a new db migration
+From the root dir:
+
+```bash
+source api/venv/bin/activate
+yoyo add --sql -m MIGRATION_NAME
+```
+
+You can view the data in the db from the commandline by installing `sqlite3` via Brew, and run from the root dir:
+
+```bash
+sqlite3 api/workout_app.db
+```
+
+## TODO
+- [ ] Add feature to create new exercises
+- [ ] Add feature to create new workout from list of exercises
+- [ ] Add timer functionality for workout
+- [ ] Add tests
+- [ ] Add python linter
+- [ ] Frontend styling
+- [ ] Deployment

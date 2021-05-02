@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import abort, Flask
 from flask_sqlalchemy import SQLAlchemy
 from yoyo import read_migrations
 from yoyo import get_backend
@@ -87,10 +87,13 @@ def get_workouts():
 
 @app.route('/api/workout/<workout_id>')
 def get_workout(workout_id):
-    name = Workout.get_by_id(workout_id).name
-    exercise_ids = WorkoutExercise.get_exercises(workout_id)
-    exercises = [{'exercise': Exercise.get_by_id(exercise.id).name} for exercise
-                 in exercise_ids]
+    workout = Workout.get_by_id(workout_id)
+    if workout is None:
+        abort(404)
+    name = workout.name
+    workout_exercises = WorkoutExercise.get_exercises(workout_id)
+    exercises = [{'exercise': Exercise.get_by_id(workout_exercise.exercise_id).name} for workout_exercise
+                 in workout_exercises]
 
     sets = []
     for i in range(NUMBER_OF_SETS):
