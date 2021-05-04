@@ -15,7 +15,7 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "start-api": "cd api && FLASK_APP=api FLASK_DEBUG=1 FLASK_ENV=development venv/bin/flask run",
     "build": "react-scripts build",
     "build-api": "cd api && python3 -m venv venv && venv/bin/pip install -r requirements.txt",
