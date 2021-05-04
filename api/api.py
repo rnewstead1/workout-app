@@ -35,7 +35,7 @@ class Exercise(db.Model):
 
     @staticmethod
     def __as_dict(exercise):
-        return {'name': getattr(exercise, 'name')}
+        return {'name': getattr(exercise, 'name'), 'id': getattr(exercise, 'id')}
 
     @staticmethod
     def get_all():
@@ -102,3 +102,7 @@ def get_workout(workout_id):
         sets.append(exercises[start:end])
 
     return {'name': name, 'sets': sets}
+
+@app.route('/api/exercises')
+def get_exercises():
+    return {'exercises': Exercise.get_all()}

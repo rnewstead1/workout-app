@@ -8,6 +8,7 @@ import {
 
 import Workout from './components/Workout';
 import WorkoutsList from './components/WorkoutsList';
+import WorkoutCreator from './components/WorkoutCreator';
 import './App.scss';
 
 export default function App() {
@@ -30,6 +31,9 @@ export default function App() {
             <li>
               <Link to="/workouts">See all</Link>
             </li>
+            <li>
+              <Link to="/create">Create a workout</Link>
+            </li>
           </ul>
           <div>
           </div>
@@ -43,6 +47,9 @@ export default function App() {
           </Route>
           <Route path="/workout/:workoutId">
             <Workout/>
+          </Route>
+          <Route path="/create">
+            <WorkoutCreator />
           </Route>
         </Switch>
       </div>
