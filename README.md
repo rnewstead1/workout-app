@@ -6,6 +6,12 @@ Api built with [Python Flask framework](https://flask.palletsprojects.com/).
 
 ## How to run
 
+In the project directory, install dependencies:
+
+```bash
+npm run build-api
+```
+
 In the project directory, start the api:
 
 ```bash
