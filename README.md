@@ -10,6 +10,7 @@ In the project directory, install dependencies:
 
 ```bash
 npm run build-api
+npm install
 ```
 
 In the project directory, start the api:
