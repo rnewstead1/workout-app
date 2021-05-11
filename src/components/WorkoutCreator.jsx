@@ -23,9 +23,9 @@ export default function WorkoutCreator() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-          title: workoutName,
-          exercises: selectedExercises
-       })
+        title: workoutName,
+        exercises: selectedExercises
+      })
     };
     fetch('/api/workout', requestOptions)
       .then(response => response.json())
@@ -41,19 +41,19 @@ export default function WorkoutCreator() {
 
   return allExercises.length > 0 &&
     (<form onSubmit={handleSubmit}>
-      <label>Workout name: <input type="textinput" name="workoutname" onChange={handleNameChange} /></label>
+      <label>Workout name: <input type="textinput" name="workoutname" onChange={handleNameChange}/></label>
       <ul>
-      {
-        allExercises.map((exercise) => {
-          return (
-            <li key={exercise.id}><label>
-              <input type="checkbox" name={exercise.name} value={exercise.id} onChange={handleChange} />
-              {exercise.name}
-            </label></li>
-          );
-        })
-      }
+        {
+          allExercises.map((exercise) => {
+            return (
+              <li key={exercise.id}><label>
+                <input type="checkbox" name={exercise.name} value={exercise.id} onChange={handleChange}/>
+                {exercise.name}
+              </label></li>
+            );
+          })
+        }
       </ul>
-      <input type="submit" value="Save" />
+      <input type="submit" value="Save"/>
     </form>);
 }
